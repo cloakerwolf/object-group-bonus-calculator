@@ -76,9 +76,12 @@ function bonusCalculator(employee) {
   if (bonusPercentage > 0.13) {
     bonusPercentage = 0.13;
   }
+  if (bonusPercentage < 0) {
+    bonusPercentage = 0;
+  }
   let totalBonus = Math.round(employee.annualSalary * bonusPercentage);
   let totalCompensation = Number(employee.annualSalary) + totalBonus;
-
+// make a new bonus object
   let newEmployee = {
     name: employee.name,
     bonusPercentage: bonusPercentage,
@@ -92,6 +95,27 @@ function bonusCalculator(employee) {
 
 // loops through employees
 
+
+/* teachers version with extra function
+function calculateAllBonuses()  {
+  // loops over employees
+  for(let employee of employees){
+    //employee[1];
+    calculateBonus(employee);
+  }
+}
+
+function BonusObject(emplpyee, bonus, total bonus){
+  let newEmployee = {
+    this.name: employee.name,
+    this.bonusPercentage: bonusPercentage,
+    this.totalCompensation: totalCompensation,
+    this.totalBonus: totalBonus,
+  }
+
+}
+
+*/
 
 // console.log(bonusCalculator(employees[0]));
 // console.log(bonusCalculator(employees[2]));
